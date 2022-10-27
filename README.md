@@ -14,6 +14,3 @@ Debe mostrar un recibo de sueldo con los datos que requiere la ley de contrato d
 9) Vacaciones y Aguinaldo
 
 El trabajo es de 2 personas y quien obtenga una calificación mayor a 8 no realiza el último trabajo del año
-
-
-> Se uso como base para la aplicacion el codigo encontrado en este [Repositorio]( https://github.com/jpmine/recibos-sueldo-js).
