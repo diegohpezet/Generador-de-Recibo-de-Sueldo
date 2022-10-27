@@ -747,7 +747,7 @@ function calcularAguinaldo() {
         //Cálculo de aguinaldo
         aguinaldo = (salarioConvenio + plusPresentismo + productividad + pagoCien + pagoCincuenta)/2
         Swal.fire(
-            'Te corresponden percibir $' + aguinaldo +' por aguinaldo',
+            'Te corresponden percibir $' + aguinaldo.toFixed(2) +' por aguinaldo',
             '',
             'info'
         )
@@ -811,7 +811,7 @@ function calcularVacaciones() {
         pagoDia = salarioConvenio/22;
         pagoVacaciones = (pagoDia + pagoDia * 0.1 + pagoDia * 0.25) * vacaciones
         Swal.fire(
-            'Te corresponden ' + vacaciones + ' días de vacaciones por ley $' + pagoVacaciones,
+            'Te corresponden ' + vacaciones + ' días de vacaciones por ley $' + pagoVacaciones.toFixed(2),
             '',
             'info'
         )
