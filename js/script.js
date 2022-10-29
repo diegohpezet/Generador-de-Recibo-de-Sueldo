@@ -269,6 +269,8 @@ senioritiUsuario.oninput = () => {
                                     }                                    
                                  }            
 
+let aguinaldoChk = document.getElementById("aguinaldoCheck")
+let vacacionesChk = document.getElementById("vacacionesCheck")
 
 //Funcion para mostrar los datos ingresados, los cálculos del salario y crear un PDF con el recibo
 function renderRecibo()
@@ -313,6 +315,27 @@ function renderRecibo()
     //Cálculo de años de antiguedad
     fechaActual = new Date().getFullYear();
     antiguedad = fechaActual - ingreso;
+
+    if(antiguedad > 1 && antiguedad < 5)
+        {
+            vacaciones = 14;
+        }
+        else if (antiguedad >= 5 && antiguedad < 10)
+        {
+            vacaciones = 21;
+        }
+        else if (antiguedad >= 10 && antiguedad < 20)
+        {
+            vacaciones = 28;
+        }
+        else if (antiguedad >= 20)
+        {
+            vacaciones = 35;
+        }
+
+        pagoDia = salarioConvenio/22;
+        pagoVacaciones = (pagoDia + pagoDia * 0.1 + pagoDia * 0.25) * vacaciones
+
 
     //Horas trabajadas
     //Valor hora
@@ -713,11 +736,34 @@ function renderRecibo()
                                 fontSize: 11,
                                 bold: true                                
                             }
-                        ],                                                
+                        ],
+                        /*
+                        aguinaldoChk.value !== "false" ? [
+                            {
+                                text: 'Aguinaldo: ' + aguinaldo.toFixed(2),
+                                alignment: 'right',
+                                fontSize: 11,
+                                bold: true                                
+                            }
+                        ] : ""
+                        */                                               
                     ]
                 }
-            }
-            
+            },
+            { 
+                alignment: 'center',
+                text: 'Otras percepciones (Si corresponden) ',
+                fontSize: 12,
+                bold: true,
+                margin: [0, 10],
+            },
+            { 
+                alignment: 'right',
+                text: vacacionesChk.value !== "false" ? 'VACACIONES: $' + pagoVacaciones.toFixed(2) : "",
+                fontSize: 12,
+                bold: true,
+                margin: [0, 10],
+            },
         ],
     };
     pdfMake.createPdf(docDefinition).open();

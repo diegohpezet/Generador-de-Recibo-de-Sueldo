@@ -142,10 +142,24 @@
                     <option>Senior</option>
                 </select>
             </div>
-
+            
+            <div class="row mt-5">
+                <label><h4>¿Corresponde Aguinaldo?</h4></label>
+                <select id="aguinaldoCheck" required class="form-select">
+                    <option selected value="false">No</option>
+                    <option value="true">Si</option>
+                </select>
+            </div>
+            <div class="row mt-5">
+                <label><h4>¿Corresponden vacaciones?</h4></label>
+                <select id="vacacionesCheck" required class="form-select">
+                    <option selected value="false">No</option>
+                    <option value="true">Si</option>
+                </select>
+            </div>
             <div class="container mt-3">
                 
-                <div class="row justify-content-center">
+                <div class="row justify-content-center mt-5">
                     <div class="botonesRecibo col-sm-12 col-md-12 col-lg-4 text-center">
                         <button type="button" class="btn btn-outline-dark btn-lg" onclick="renderRecibo()">RECIBO EN PDF</button>
                     </div>
